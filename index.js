@@ -12,10 +12,8 @@ import roomRoutes from "./src/routes/rom/roomRoutes.js";
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
-  "*",
   cors({
     origin: "https://roomify-alpha.vercel.app",
-    optionsSuccessStatus: 200,
   })
 );
 
