@@ -93,6 +93,9 @@ const filterController = async (req, res) => {
   } else if (dataKeysString === "family") {
     const filteredData = await Publish.find({ gender: "Family" });
     res.send(filteredData);
+  } else {
+    const filteredData = await Publish.find({});
+    res.send(filteredData);
   }
 };
 
