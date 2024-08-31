@@ -31,10 +31,35 @@ const roomAdminUpdate = async (req, res) => {
       ...data.data,
       owner: data.owner,
     });
-    console.log(findData);
+  } catch (error) {
+    console.log(error);
+  }
+};
+const searchengineController = async (req, res) => {
+  try {
+    const data = await req.body;
+    const dataKeysString = await Object.keys(data).join(", ");
+    res.send(dataKeysString);
+  } catch (error) {
+    console.log(error);
+  }
+};
+const roompeoplesiteController = async (req, res) => {
+  try {
+    const data = await req.body;
+    const dataKeysString = await Object.keys(data).join(", ");
+    const findata = await Publish.findById(dataKeysString);
+    res.send(findata);
   } catch (error) {
     console.log(error);
   }
 };
 
-export { roomFinder, roomAdminController, roomAdminDelete, roomAdminUpdate };
+export {
+  roomFinder,
+  roomAdminController,
+  roomAdminDelete,
+  roomAdminUpdate,
+  searchengineController,
+  roompeoplesiteController,
+};

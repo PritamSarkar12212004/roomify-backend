@@ -8,6 +8,7 @@ const app = express();
 import authenticate from "./src/routes/authenticate/authenticate.js";
 import publishRoute from "./src/routes/publish/publishRoute.js";
 import roomRoutes from "./src/routes/rom/roomRoutes.js";
+import filterRoutes from "./src/routes/filter/filterRoutes.js";
 // setup express files
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -19,6 +20,7 @@ Database();
 app.use("/auth", authenticate);
 app.use("/admin", publishRoute);
 app.use("/find", roomRoutes);
+app.use("/filter", filterRoutes);
 
 // server startup
 const port = process.env.PORT;
