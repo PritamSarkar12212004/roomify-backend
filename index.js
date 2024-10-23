@@ -13,7 +13,7 @@ import filterRoutes from "./src/routes/filter/filterRoutes.js";
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin:"https://roomify-alpha.vercel.app"
+  origin:"https://roomify-alpha.vercel.app/"
 }));
 
 Database();
