@@ -10,11 +10,14 @@ import publishRoute from "./src/routes/publish/publishRoute.js";
 import roomRoutes from "./src/routes/rom/roomRoutes.js";
 import filterRoutes from "./src/routes/filter/filterRoutes.js";
 // setup express files
+app.use(
+  cors({
+    origin: "https://roomify-alpha.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-  origin:"https://roomify-alpha.vercel.app"
-}));
 
 Database();
 
